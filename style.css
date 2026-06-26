@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Trento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); /* Add Poppins font */
+
+body {
+    margin: 0;
+    font-family: 'Trento', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    font-weight: 400;
+    padding-top: 90px; /* Add space for fixed nav */
+}
+
+/* Main navigation styles */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    background: #fff;
+    padding: 32px 0 24px 0;
+    border-bottom: 1px solid #eee;
+    position: fixed;           /* Make nav fixed */
+    top: 0;                    /* Stick to top */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.main-nav a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.1rem; /* 2px smaller than before */
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400; /* Thinner font weight */
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+.main-nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #222;
+    transition: width 0.2s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.main-nav a:hover {
+    color: #222;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown menu styles */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown > a {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    margin-top: 8px;
+    z-index: 999;
+    padding: 8px 0;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.dropdown-menu a::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #222;
+    transition: width 0.2s;
+}
+
+.dropdown-menu a:hover {
+    color: #222;
+}
+
+.dropdown-menu a:hover::before {
+    width: calc(100% - 40px);
+}
+
+/* Ethan Nieuwenhuizen name banner styles */
+.name-banner {
+    font-family: 'Dancing Script', cursive;
+    color: #e53935;
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 40px 0 0 0;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.77,0,0.175,1);
+    z-index: 1;
+    position: relative;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.name-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin: 0 0 30px 0;
+}
+
+.art-section,
+.identity-section,
+.motion-section,
+.music-section {
+    margin-top: 90px;
+}
+
+/* Ensure the first page section below the fixed nav gets the same class-based spacing */
+.art-section:first-of-type,
+.identity-section:first-of-type,
+.motion-section:first-of-type,
+.music-section:first-of-type {
+    margin-top: 90px;
+}
+
+h2 {
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid #ffb347;
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+/* Standardized section heading used on Motion & Video */
+.section-heading {
+    text-align: center;
+    margin: 0 0 20px; /* remove top margin; sections provide spacing */
+    border-bottom: none;
+    display: block;
+    padding-bottom: 0;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 700;
+} 
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Ensure consistent width for grid layouts */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.portfolio-item > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.portfolio-item > a:hover {
+    color: inherit;
+}
+
+/* Remove link styling from portfolio grid links */
+.portfolio-grid > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.portfolio-grid > a:hover {
+    color: inherit;
+}
+
+.portfolio-grid > a h3 {
+    color: #222;
+}
+
+.portfolio-grid > a h3:visited {
+    color: #222;
+}
+
+/* Only affect images in portfolio boxes on index.html */
+body#index .portfolio-grid .portfolio-item img {
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make images square and centered for all portfolio pages except index.html */
+body:not(#index) .portfolio-item img {
+    width: 100%;
+    height: 220px;
+    max-width: 220px;
+    max-height: 220px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-item h3 {
+    font-weight: 700;
+}
+
+.portfolio-item p {
+    font-weight: 500;
+}
+
+.portfolio-description {
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px 0 0 0;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: none;
+    font-weight: 500;
+}
+
+button {
+    background: #ffb347;
+    color: #222;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #ffa500;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Social icons styles */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.social-icons .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    border: 1px solid #eee;
+}
+
+.social-icons .icon:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 24px rgba(229,57,53,0.18);
+    background: #ffeaea;
+    border-color: #e53935;
+}
+
+.social-icons .icon svg {
+    display: block;
+}
+
+/* Social icons using FontAwesome */
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  padding: 0;
+  position: static;
+  transform: none;
+}
+
+.social-list li {
+  list-style: none;
+}
+
+.social-list li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+  transition: box-shadow 0.3s;
+}
+
+.social-list li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.social-list li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-list li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.social-list li a:hover:before {
+  top: 0;
+}
+
+ .social-list li:nth-child(1) a:before {
+    background: #e1306c; /* Instagram pink */
+}
+
+.social-list li:nth-child(2) a:before{
+  background: #3b5999; /* Facebook blue */
+}
+
+.social-list li:nth-child(3) a:before{
+  background: #dd4b39; /* Gmail red */
+}
+
+.social-list li:nth-child(4) a:before {
+  background: #ff5500; /* SoundCloud orange */
+}
+
+/* Add to the end of your style.css file for music.html styling */
+/* filepath: c:\Users\ethan\OneDrive\Desktop\Visual Studio Projects\Ethan Nieuwenhuizen Portfolio\style.css */
+.music-section, .identity-section, .art-section, .motion-section {
+    margin: 0 auto 30px auto;
+    max-width: 900px;
+    padding: 0 20px;
+    margin-top: 90px;
+}
+
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center; /* Center all boxes horizontally */
+}
+
+.music-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px; /* Set a fixed max width for all boxes */
+    min-height: 120px;
+    box-sizing: border-box;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center; /* Center the title */
+    width: 100%;
+}
+
+/* Responsive global layout helpers */
+html {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.landing-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.landing-hero .hero-copy,
+.landing-hero .hero-image {
+    flex: 1 1 320px;
+    min-width: 280px;
+}
+
+.landing-hero .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+@media (max-width: 760px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 30px 18px;
+    }
+
+    .main-nav {
+        gap: 18px;
+        padding: 22px 0 18px 0;
+    }
+
+    .portfolio-item {
+        padding: 18px;
+    }
+
+    .music-item {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 680px) {
+    .main-nav {
+        justify-content: center;
+    }
+
+    .landing-hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .landing-hero .hero-copy,
+    .landing-hero .hero-image {
+        max-width: 100%;
+    }
+
+    .download-cv-btn {
+        width: 100%;
+    }
+
+    h2, .section-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .main-nav {
+        gap: 12px;
+        padding: 16px 0 14px 0;
+    }
+
+    .main-nav a {
+        font-size: 1rem;
+    }
+
+    .portfolio-item {
+        padding: 16px;
+    }
+
+    .download-cv-btn {
+        padding: 12px 18px;
+    }
+}
+
+/* New styles for download CV button */
+.download-cv-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 20px;
+}
+
+.download-cv-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Landing section fade and slide animation */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#landing {
+    animation: fadeSlideIn 1s ease-out forwards;
+}

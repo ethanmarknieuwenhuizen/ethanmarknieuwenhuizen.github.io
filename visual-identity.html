@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding & Identity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove yellow underline and center the title */
+        .visual-identity-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #222;
+            border-bottom: none;
+            padding-bottom: 0;
+            display: block;
+        }
+
+        /* Match the previous top spacing for this page */
+        .identity-section {
+            margin-top: 90px !important;
+        }
+
+        /* Use the same 2-column grid layout as Art & Illustration */
+        .identity-section .portfolio-grid {
+            grid-template-columns: repeat(2, minmax(280px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-dropdown">
+            <a href="index.html#landing">About</a>
+            <div class="dropdown-menu">
+                <a href="index.html#landing">About</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="nav-dropdown">
+            <a href="index.html#portfolio">Portfolio</a>
+            <div class="dropdown-menu">
+                <a href="visual-identity.html">Branding & Identity</a>
+                <a href="art-illustration.html">Design & Illustration</a>
+                <a href="motion-video.html">Video & Motion</a>
+                <a href="music.html">Sound & Music</a>
+            </div>
+        </div>
+        <div class="nav-dropdown">
+            <a href="index.html#contact">Contact</a>
+            <div class="dropdown-menu">
+                <a href="index.html#contact">Instagram</a>
+                <a href="index.html#contact">Facebook</a>
+                <a href="index.html#contact">Gmail</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="container identity-section">
+            <h2 class="visual-identity-title">Logo Design</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="Portfolio/Logo%27s/1.%20Blacc%20Error%20Supreme%20Team%20Logo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="Portfolio/Logo%27s/1.%20Blacc%20Error%20Supreme%20Team%20Logo.jpg" alt="Blacc Error $upreme Team Logo">
+                        <h3>Blacc Error $upreme Team</h3>
+                        <p class="portfolio-description">Redesigned an existing logo for a music group I was part of, with the goal of strengthening and refining its brand identity.</p>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="Portfolio/Logo%27s/2.%20EvoKleen%20Logo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="Portfolio/Logo%27s/2.%20EvoKleen%20Logo.jpg" alt="EvoKleen Logo">
+                        <h3>EvoKleen</h3>
+                        <p class="portfolio-description">Created a logo for a startup cleaning company specializing in the production of raw chemical ingredients for household cleaning products.</p>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="Portfolio/Logo%27s/3.%20AE%20Global%20Getaways%20Logo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="Portfolio/Logo%27s/3.%20AE%20Global%20Getaways%20Logo.jpg" alt="AE Global Getaways Logo">
+                        <h3>AE Global Getaways</h3>
+                        <p class="portfolio-description">Developed a logo for a startup travel agency focused on securing client bookings while promoting tourism growth.</p>
+                    </a>
+                </div>
+                <!-- Add more logos as needed -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
